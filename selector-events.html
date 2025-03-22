@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors</title>
+</head>
+<body>
+    <p>hello</p>
+
+    <div class="container">
+        <p id="p1">para1</p>
+        <p id="p2">para2</p>
+        <p id="p3">para3</p>
+        <p id="p4">para4</p>
+    </div>
+
+    <ul class="list">
+        <li id="li1">list item1</li>
+        <li id="li2">list item2</li>
+        <li id="li3">list item3</li>
+        <li id="li4">list item4</li>
+    </ul>
+
+    <button id="btn">Click to toggle</button>
+    <div class="data">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, debitis beatae quas nostrum dolorum facilis iusto ipsa dolores sint itaque et expedita ad tempora magnam est ducimus. Laborum, optio libero?
+        Deleniti, doloribus omnis illum tenetur temporibus quia ut aspernatur laudantium corporis sint modi dolorum eos nisi deserunt ad, praesentium id autem animi eum. Beatae et facilis doloribus, assumenda asperiores debitis?
+        Deserunt sunt vel, tempore facere optio blanditiis asperiores id accusamus at consequatur temporibus alias officia fugit quis amet! Consectetur pariatur sapiente cum amet commodi eligendi quod praesentium molestias dolore doloremque.
+    </div> <br>
+
+    <button id="btn2">Slide Toggle</button>
+    <div class="data2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere repudiandae fugit fugiat harum eveniet debitis sunt quasi repellendus, doloremque perferendis officiis reprehenderit atque, labore sapiente laudantium? Unde ab quis quasi?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad maiores molestiae odit cum, tempora praesentium suscipit voluptas, consequuntur hic odio nisi fugiat aliquam deserunt commodi reprehenderit quas, neque quam adipisci!
+        Quae corporis a illo voluptate pariatur explicabo rem iste quas neque. Velit possimus aliquam ea, laborum maxime et repellat ratione incidunt? Placeat odio in eveniet. Odio ipsam asperiores minus doloribus?
+    </div> <br>
+
+    <button id="btn3">Slide Toggle</button>
+    <div class="data3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere repudiandae fugit fugiat harum eveniet debitis sunt quasi repellendus, doloremque perferendis officiis reprehenderit atque, labore sapiente laudantium? Unde ab quis quasi?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad maiores molestiae odit cum, tempora praesentium suscipit voluptas, consequuntur hic odio nisi fugiat aliquam deserunt commodi reprehenderit quas, neque quam adipisci!
+        Quae corporis a illo voluptate pariatur explicabo rem iste quas neque. Velit possimus aliquam ea, laborum maxime et repellat ratione incidunt? Placeat odio in eveniet. Odio ipsam asperiores minus doloribus?
+    </div>
+</body>
+<script src="js/jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#p1').click(function() {
+            console.log("clicked on", this);
+        });
+
+        $('#p1').dblclick(function() {
+            console.log("doubled clicked on", this);
+        })
+
+        $('.container :nth-child(2)').css({
+            "background-color": "pink"
+        });
+
+        $('p:nth(1)').css("color", "brown");
+
+        $('ul').children().css("font-size", "large")
+
+        $('li:odd').css("background-color", "yellow");
+        $('li:even').css("background-color", "skyblue");
+
+        $('#p3').on({
+            click: function() {
+                console.log("clicked");
+            },
+
+            mouseenter: function() {
+                console.log("mouseenter");
+            },
+
+            dblclick: function() {
+                console.log("doublr clicked");
+            }
+        })
+
+        // $('.data').hide(2000, function() {
+        //     console.log("hidden")
+        // });
+        // $('.data').show(10000, function() {
+        //     console.log("shown")
+        // });
+
+        // change opacity of element
+        $('#btn').click(function() {
+            $('.data').fadeTo(1000, 0.4)
+        })
+
+        $('#btn2').click(function() {
+            $('.data2').slideToggle(1000);
+        })
+
+        $('#btn3').click(function() {
+            $('.data3').animate({
+                width: '300px',
+                height: '100px'
+            })
+        })
+    })
+</script>
+</html>
