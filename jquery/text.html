@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .span{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam, quos aliquam ullam, culpa eveniet ducimus consequatur quam nam eaque, praesentium molestiae unde eligendi tempore quia dolores eum impedit itaque accusamus.
+        Ipsam corporis impedit amet autem deserunt blanditiis itaque fugiat quia, ullam, tempore eaque illo libero accusantium? Dolor accusantium delectus illum facilis ipsum vero at ab. Sunt quaerat ex voluptatum aliquam?
+    </div> <br>
+
+    <input type="text" name="name" id="name" placeholder="enter name">
+    <button id="getValue">Get Value</button>
+
+    <p class="middle">middle</p>
+
+    <span class="span" style="background-color: purple;">b</span>
+</body>
+<script src="js/jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+        setTimeout(function() {
+            $('.box').text("Changed text using jquery");
+        }, 2000);
+
+        // Get the value when the button is clicked
+        $('#getValue').click(function() {
+            var inputValue = $('#name').val();  // Use .val() to get the value of input field
+            console.log("Input Value: " + inputValue);
+        });
+
+        $('.middle').before("<p class='before'>before</p>");
+        $('.middle').after("<p>after</p>")
+
+        $('.span').prepend("a ");
+        $('.span').append("c ");
+
+        $('.span').css("background-color", "yellow")
+    });
+</script>
+</html>
