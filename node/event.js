@@ -12,7 +12,6 @@ event.on("greet", (name) => {
 event.emit('greet', 'Anshika')
 
 
-// Register the first listener
 event.on('dataReceived', () => {
   console.log('Listener 1: Data has been received!');
 });
