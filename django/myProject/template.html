@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Students</h1>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Roll number</th>
+            <th>email</th>
+            <th>dob</th>
+            <th>email</th>
+        </tr>
+
+        <tr>
+            {% for student in students %}
+            <td>{{student.name}}</td>
+            <td>{{student.roll_num}}</td>
+            <td>{{student.email}}</td>
+
+            {%endfor%}
+        </tr>
+    </table>
+</body>
+</html>
