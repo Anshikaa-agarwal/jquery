@@ -5,7 +5,6 @@ const port = 3001
 //using json
 app.use(express.json())
 
-//defining an empty array for stock
 let products = []
 
 //generate product id
