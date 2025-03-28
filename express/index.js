@@ -7,7 +7,6 @@ app.use(express.json())
 
 let products = []
 
-//generate product id
 function generateID() {
     return products.length+1;
 }
