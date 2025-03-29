@@ -34,7 +34,6 @@ app.get('/products', (req, res) => {
     res.json(products);
 })
 
-//update inventory (put)
 app.put('/products', (req, res) => {
     const { id } = req.params;
     const { name, value, stock } = req.body;
