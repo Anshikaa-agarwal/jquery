@@ -29,7 +29,6 @@ app.post('/products', (req, res) => {
     res.status(200).json(newProduct);
 })
 
-//view inventory
 app.get('/products', (req, res) => {
     res.json(products);
 })
